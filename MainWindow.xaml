@@ -1,0 +1,144 @@
+﻿<Window x:Class="NetDiagGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NetDiag Cyber Suite"
+        Height="720"
+        Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#0d1117">
+
+<Grid x:Name="MainGrid">
+
+<Grid.ColumnDefinitions>
+<ColumnDefinition Width="230"/>
+<ColumnDefinition Width="*"/>
+</Grid.ColumnDefinitions>
+
+<!-- Sidebar -->
+
+<Border Background="#161b22" Grid.Column="0">
+
+<StackPanel>
+
+<TextBlock
+Text="NetDiag"
+Foreground="#00ff9c"
+FontSize="26"
+Margin="20"
+FontWeight="Bold"/>
+
+<Button Content="Ping"
+Height="45"
+Margin="10"
+Click="PingButton_Click"/>
+
+<Button Content="DNS Lookup"
+Height="45"
+Margin="10"
+Click="DNSButton_Click"/>
+
+<Button Content="Traceroute"
+Height="45"
+Margin="10"
+Click="TraceButton_Click"/>
+
+<Button Content="WHOIS"
+Height="45"
+Margin="10"
+Click="WhoisButton_Click"/>
+
+<Button Content="GeoIP"
+Height="45"
+Margin="10"
+Click="GeoButton_Click"/>
+
+<Button Content="Port Scanner"
+Height="45"
+Margin="10"
+Click="ScanPorts_Click"/>
+
+<Button Content="LAN Devices"
+Height="45"
+Margin="10"
+Click="LanScan_Click"/>
+
+<Button Content="Toggle Theme"
+Height="45"
+Margin="10"
+Click="ThemeButton_Click"/>
+
+</StackPanel>
+
+</Border>
+
+<!-- Main Area -->
+
+<Grid Grid.Column="1" Margin="20">
+
+<Grid.RowDefinitions>
+<RowDefinition Height="60"/>
+<RowDefinition Height="*"/>
+<RowDefinition Height="25"/>
+</Grid.RowDefinitions>
+
+<!-- Header -->
+
+<Border Background="#161b22"
+CornerRadius="8"
+Padding="10">
+
+<StackPanel Orientation="Horizontal">
+
+<TextBox x:Name="TargetInput"
+Width="300"
+Height="35"
+FontSize="16"
+VerticalContentAlignment="Center"
+Margin="5"
+Text="scanme.nmap.org"/>
+
+<Button
+Content="Start"
+Width="120"
+Height="35"
+Click="ScanPorts_Click"/>
+
+</StackPanel>
+
+</Border>
+
+<!-- Result Panel -->
+
+<Border Grid.Row="1"
+Margin="0,15,0,0"
+Background="#010409"
+CornerRadius="8"
+Padding="10">
+
+<TextBox x:Name="OutputBox"
+Background="#010409"
+Foreground="#00ff9c"
+FontFamily="Consolas"
+FontSize="14"
+VerticalScrollBarVisibility="Auto"
+AcceptsReturn="True"
+TextWrapping="Wrap"
+BorderThickness="0"/>
+
+</Border>
+
+<!-- Developer -->
+
+<TextBlock
+Grid.Row="2"
+Text="Developed by CyberPulse"
+Foreground="#666"
+HorizontalAlignment="Right"
+VerticalAlignment="Center"
+Margin="5"
+FontSize="12"/>
+
+</Grid>
+
+</Grid>
+</Window>
